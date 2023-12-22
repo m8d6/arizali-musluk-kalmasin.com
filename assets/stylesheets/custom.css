@@ -123,13 +123,26 @@ main {
     overflow-x: auto
 }
 
+#technicians input {
+    z-index: 5;
+    position: absolute;
+    top: -100;
+}
+
 #technicians ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     position: absolute;
-    animation: slideAnimation 20s linear infinite
+}
+
+#technicians:has(input[value="left"]:checked) ul {
+    animation: slideAnimationLeft 20s linear infinite;
+}
+
+#technicians:has(input[value="right"]:checked) ul {
+    animation: slideAnimationRight 20s linear infinite;
 }
 
 #technicians ul li {
@@ -186,8 +199,14 @@ footer {
     }
 }
 
-@keyframes slideAnimation {
+@keyframes slideAnimationLeft {
     0% { left: 0%; }
     50% { left: -114%; }
     100% { left: 0; }
+}
+
+@keyframes slideAnimationRight {
+    0% { right: 0%; }
+    50% { right: 114%; }
+    100% { right: 0; }
 }
