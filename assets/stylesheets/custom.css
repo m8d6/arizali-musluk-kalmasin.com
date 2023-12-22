@@ -4,13 +4,10 @@ html, body {
 
 body {
     display: grid;
-    grid-template-areas:
-     "header header header header header"
-     "aside main main main main"
-     "aside main main main main"
-     "aside main main main main"
-     "aside main main main main"
-     "footer footer footer footer footer";
+    grid-template:
+        "header header" 150px
+        "aside main" auto
+        "footer footer" 100px / 150px calc(100vw - 150px)
 }
 
 header {
@@ -36,7 +33,7 @@ header {
 
 #header-top img:first-child {
     filter: sepia(1);
-    transition: all .5s;
+    animation: imageFilterAnimation 5s infinite linear;
 }
 
 #header-top img:first-child:hover {
@@ -77,11 +74,15 @@ aside a {
 main {
     border: 1px solid #333;
     grid-area: main;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    padding: 15px;
 }
 
 #section-one {
     list-style-type: none;
-    margin: 15px 0;
+    margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-evenly;
@@ -100,7 +101,93 @@ main {
     border-radius: 20%;
 }
 
+#about-us {
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+    animation: borderRadiusDynamic 2s infinite linear;
+}
+
+#about-us > h2 {
+    animation: textColor 2s linear infinite;
+}
+
+#about-us > h2, #about-us > p {
+    margin: 0;
+}
+
+#technicians {
+    position: relative;
+    height: 170px;
+    overflow-x: auto
+}
+
+#technicians ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: absolute;
+    animation: slideAnimation 20s linear infinite
+}
+
+#technicians ul li {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 footer {
     border: 1px solid #333;
     grid-area: footer;
+}
+
+
+@keyframes textColor {
+    0% {
+        color: #333;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@keyframes borderRadiusDynamic {
+    0% {
+        border-radius: 0;
+    }
+
+    50% {
+        border-radius: 20px;
+    }
+
+    100% {
+        border-radius: 0;
+    }
+}
+
+@keyframes imageFilterAnimation {
+    0% {
+        filter: grayscale(0);
+    }
+
+    50% {
+        filter: grayscale(1);
+    }
+
+    100% {
+        filter: grayscale(0);
+    }
+}
+
+@keyframes slideAnimation {
+    0% { left: 0%; }
+    50% { left: -114%; }
+    100% { left: 0; }
 }
