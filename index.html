@@ -36,7 +36,7 @@
             <a href="#">Ra Ra Ra</a>
         </nav>
 
-        <button>Come To Dubai</button>
+        <button id="call-to-action">Come To Dubai</button>
     </aside>
 
     <main>
@@ -112,10 +112,57 @@
             <input type="radio" name="orientation" value="right" /> Right
             <input type="radio" name="orientation" value="left" checked="true" /> Left
         </section>
+
+        <section id="section-two">
+            <section id="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.02955000172!2d32.65428484872882!3d41.2130080556999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40835318ced11581%3A0xc7968681472940!2sKarab%C3%BCk%20%C3%9Cniversitesi%20Teknopark!5e0!3m2!1str!2str!4v1703583773313!5m2!1str!2str" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+            <section id="contact-us">
+                <h3>Arıza Bildirim Hattı</h3>
+                <p>Arızalarınızı bize <strong>0(370) 444 44 44</strong> üzerinden bildirin. Arızalarınıza veda bile edemeden kurtulun.</p>
+                <form id="contact-form" action="#">
+                    <label for="form-name">Adınız</label>
+                    <input type="text" name="name" id="form-name" placeholder="Adınız ve Soyadınız" />
+
+                    <label for="form-phone">Telefon Numarası</label>
+                    <input type="tel" name="phone" id="form-phone" placeholder="Size Ulaşabileceğimiz Numaranız" />
+
+                    <label for="form-problem-type">Problem Türünüz</label>
+                    <select name="problem_type" id="form-problem-type">
+                        <option value="musluk">Musluk</option>
+                        <option value="kombi">Kombi</option>
+                    </select>
+
+                    <label for="form-problem-description">Probleminiz Nedir?</label>
+                    <textarea name="problem_description" id="form-problem-description" rows="5"></textarea>
+
+                    <button type="submit">Acil Durum!</button>
+                </form>
+            </section>
+        </section>
+
+<div></div>
+<section></section>
+
+        <video width="320" height="240" loop="true" controls>
+            <source src="assets/videos/movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </main>
 
     <footer>
         Footer
     </footer>
+
+    <a id="go-to-top" href="#">
+        <img src="assets/icons/top-arrow.svg" width="15" height="15" alt="Yuharı Bah" />
+    </a>
+
+    <script src="assets/javascripts/go-to-top.js"></script>
+    <script src="assets/javascripts/call-to-action.js"></script>
+    <script src="assets/javascripts/contact-form.js"></script>
+    <script src="assets/javascripts/title-handler.js"></script>
+    <script src="assets/javascripts/video-handler.js"></script>
 </body>
 </html>
