@@ -120,30 +120,61 @@ main {
 #technicians {
     position: relative;
     height: 170px;
-    overflow-x: auto
 }
 
-#technicians input {
+/* #technicians input {
     z-index: 5;
     position: absolute;
     top: -100;
-}
+} */
 
 #technicians ul {
     list-style-type: none;
+    overflow-x: auto;
     margin: 0;
+    width: 100%;
     padding: 0;
     display: flex;
     position: absolute;
 }
 
-#technicians:has(input[value="left"]:checked) ul {
+#technicians ul li {
+    width: 150px;
+    min-width: 150px;
+}
+
+#technicians section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#technicians section button {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+#technicians section button:hover {
+    background-color: rgba(0, 0, 0, .25);
+}
+
+#technicians section button img {
+    max-height: 24px;
+}
+
+/* #technicians:has(input[value="left"]:checked) ul {
     animation: slideAnimationLeft 20s linear infinite;
 }
 
 #technicians:has(input[value="right"]:checked) ul {
     animation: slideAnimationRight 20s linear infinite;
-}
+} */
 
 #technicians ul li {
     display: inline-flex;
@@ -185,6 +216,18 @@ footer {
     padding: 10px;
     border-radius: 50%;
     display: none;
+}
+
+#live-chat {
+    position: fixed;
+    top: 20%;
+    right: -35px;
+    transform: rotate(270deg);
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
 }
 
 
@@ -232,7 +275,7 @@ footer {
         transform: rotateY(0);
     }
 }
-
+/*
 @keyframes slideAnimationLeft {
     0% { left: 0%; }
     50% { left: -114%; }
@@ -243,4 +286,4 @@ footer {
     0% { right: 0%; }
     50% { right: 114%; }
     100% { right: 0; }
-}
+} */
